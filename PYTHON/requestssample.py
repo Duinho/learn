@@ -1,7 +1,15 @@
-import requests
+import ImageGrab
+import os
+import time
 
-url = "http://naver.com"
+def screenGrab():
+    box = ()
+    im = ImageGrab.grab()
+    im.save(os.getcwd() + '\\full_snap__' + str(int(time.time())) +
+'.png', 'PNG')
 
-r = requests.get(url)
+def main():
+    screenGrab()
 
-print (r.content)
+if __name__ == '__main__':
+    main()
